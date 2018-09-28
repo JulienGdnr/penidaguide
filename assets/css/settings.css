@@ -65,7 +65,7 @@ website:   	http://www.themepunch.com
 			margin: 0px;
 			border-width: 0px;
 			border-style: none;
-			background-color:#fb7354;
+			background-color:#54fbf3;
 			letter-spacing: -1.5px;
 		}
 
@@ -478,7 +478,7 @@ website:   	http://www.themepunch.com
 .purchase.red, .purchase:hover.red				{ background-color:#cb1d1d; -webkit-box-shadow:  0px 3px 0px 0px #7c1212;        -moz-box-shadow:   0px 3px 0px 0px #7c1212;        box-shadow:   0px 3px 0px 0px #7c1212;}
 
 .button.orange, .button:hover.orange,
-.purchase.orange, .purchase:hover.orange		{ background-color:#ff7700; -webkit-box-shadow:  0px 3px 0px 0px #a34c00;        -moz-box-shadow:   0px 3px 0px 0px #a34c00;        box-shadow:   0px 3px 0px 0px #a34c00;}
+.purchase.orange, .purchase:hover.orange		{ background-color:#1d78cb; -webkit-box-shadow:  0px 3px 0px 0px #0f3e68;        -moz-box-shadow:   0px 3px 0px 0px #a34c00;        box-shadow:   0px 3px 0px 0px #a34c00;}
 
 .button.darkgrey,.button.grey,
 .button:hover.darkgrey,.button:hover.grey,

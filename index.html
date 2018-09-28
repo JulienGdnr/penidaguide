@@ -1,11 +1,12 @@
-
 <!DOCTYPE html>
-<html lang="zxx">
-  <head>
+<html lang="en">
+
+<head>
     <meta charset="utf-8">
     <title>Nusa Penida | Island Travel by locals</title>
     <meta content="Travel in Nusa Penida with a local guide from the island. 
-    Travel with Putu and his family and discover the true Indonesian culture." name="description">
+    Travel with Putu and his family and discover the true Indonesian culture."
+        name="description">
     <meta content="Putu" name="author">
     <meta content="" name="keywords">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
@@ -21,7 +22,7 @@
     <link href="assets/css/datepicker.min.css" rel="stylesheet">
     <!-- revolution slider css -->
     <link rel="stylesheet" type="text/css" href="assets/css/fullwidth.css" media="screen" />
-	  <link rel="stylesheet" type="text/css" href="assets/css/settings.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="assets/css/settings.css" media="screen" />
     <link rel="stylesheet" href="assets/css/rev-settings.css" type="text/css">
     <!-- on3step CSS -->
     <link href="assets/css/animated-on3step.css" rel="stylesheet">
@@ -29,589 +30,966 @@
     <link href="assets/css/owl.theme.css" rel="stylesheet">
     <link href="assets/css/on3step-style.css" rel="stylesheet">
     <link href="assets/css/queries-on3step.css" media="all" rel="stylesheet">
-  </head>
-  
-  <body>
-  
+    <link href="assets/css/popup.css" rel="stylesheet">
+
+</head>
+
+<body>
+
     <!-- preloader -->
     <div class="bg-preloader-white"></div>
     <div class="preloader-white">
-      <div class="mainpreloader">
-        <span></span>
-      </div>
+        <div class="mainpreloader">
+            <span></span>
+        </div>
     </div>
     <!-- preloader end -->
-    
-   <!-- content wraper -->
-   <div class="content-wrapper">
-    
-   <header class="init">
-    
-    <!-- subnav -->
-    <!-- <div class="container-fluid m-5-hor">
-    <div class="row">
-        <div class="subnav">
 
-         <div class="col-md-6">
-          <div class="left">
-            <div class="social-icons-subnav hidden-sm hidden-xs">
-                <div>Call Us : +62 853-3740-8370</div>
+    <style scoped>
+        @-webkit-keyframes float {
+
+            0%,
+            100% {
+                transform: translatey(0);
+                transform: translatex(0)
+            }
+
+            50% {
+                transform: translatey(-30px);
+                transform: translatex(20px)
+            }
+        }
+
+        @-moz-keyframes float {
+
+            0%,
+            100% {
+                transform: translatey(0);
+                transform: translatex(0)
+            }
+
+            50% {
+                transform: translatey(-30px);
+                transform: translatex(20px)
+            }
+        }
+
+        @-o-keyframes float {
+
+            0%,
+            100% {
+                transform: translatey(0);
+                transform: translatex(0)
+            }
+
+            50% {
+                transform: translatey(-30px);
+                transform: translatex(20px)
+            }
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translatey(0);
+                transform: translatex(0)
+            }
+
+            50% {
+                transform: translatey(-30px);
+                transform: translatex(20px)
+            }
+        }
+
+        *,
+        :after,
+        :before {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+
+        body {
+            background: #3e4146;
+            font-family: 'Roboto Condensed', sans-serif
+        }
+
+        .button {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2
+        }
+
+        .button button,
+        .pop-up {
+            position: absolute;
+            top: 50%;
+            left: 50%
+        }
+
+        .button button {
+            -webkit-transform: translate(-50%, -50%);
+            -moz-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            -o-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            font-family: inherit;
+            background-color: rgb(113, 238, 109);
+            border: 0;
+            padding: 15px 25px;
+            color: #fff;
+            text-transform: uppercase;
+            font-size: 21px;
+            letter-spacing: 1px;
+            width: 200px;
+            overflow: hidden;
+            outline: 0;
+            -webkit-transition: all .4s;
+            -moz-transition: all .4s;
+            -o-transition: all .4s;
+            transition: all .4s;
+            visibility: visible;
+            opacity: 1;
+            font-weight: 700;
+            box-shadow: 0 6px 30px rgba(0, 0, 0, .6)
+        }
+
+        .button button:hover {
+            cursor: pointer;
+            background-color: #8e6ac1;
+            color: #fff
+        }
+
+        .button button span {
+            opacity: 1
+        }
+
+        .button.clicked button {
+            visibility: hidden;
+            oacity: 0
+        }
+
+        .pop-up {
+            -webkit-transform: translate(-50%, -50%) scale(.9);
+            -moz-transform: translate(-50%, -50%) scale(.9);
+            -ms-transform: translate(-50%, -50%) scale(.9);
+            -o-transform: translate(-50%, -50%) scale(.9);
+            transform: translate(-50%, -50%) scale(.9);
+            overflow-y: auto;
+            box-shadow: 0 6px 30px rgba(0, 0, 0, .4);
+            visibility: hidden;
+            opacity: 0;
+            -webkit-transition: all .3s;
+            -moz-transition: all .3s;
+            -o-transition: all .3s;
+            transition: all .3s;
+            z-index: 10;
+            background-color: #fff;
+            width: 100%;
+            height: 100%
+        }
+
+        @media (min-width:768px) {
+            .pop-up {
+                width: calc(100% - 40px);
+                height: auto;
+                max-width: 900px
+            }
+        }
+
+        .pop-up .content {
+            width: 100%;
+            max-width: 900px;
+            overflow: hidden;
+            text-align: center;
+            position: relative;
+            min-height: 100vh
+        }
+
+        .pop-up .content .container {
+            padding: 100px 20px 140px
+        }
+
+        @media (min-width:568px) {
+            .pop-up .content .container {
+                padding: 50px 20px 80px
+            }
+        }
+
+        .pop-up .content .close {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 1.1rem;
+            letter-spacing: .05rem;
+            color: #3e4146;
+            -webkit-transition: all .4s;
+            -moz-transition: all .4s;
+            -o-transition: all .4s;
+            transition: all .4s
+        }
+
+        .pop-up .content .close:hover {
+            cursor: pointer;
+            color: #7df667
+        }
+
+        .pop-up .content .dots .dot {
+            position: absolute;
+            border-radius: 100%;
+            z-index: 11
+        }
+
+        .pop-up .content .dots .dot:nth-of-type(1) {
+            top: -80px;
+            right: -80px;
+            width: 160px;
+            height: 160px;
+            background-color: #689bf6;
+            -webkit-animation: float 6s ease-in-out infinite;
+            -moz-animation: float 6s ease-in-out infinite;
+            -o-animation: float 6s ease-in-out infinite;
+            animation: float 6s ease-in-out infinite
+        }
+
+        @media (min-width:768px) {
+            .pop-up .content {
+                min-height: inherit
+            }
+
+            .pop-up .content .container {
+                padding: 70px 0 90px;
+                max-width: 520px;
+                margin: 0 auto
+            }
+
+            .pop-up .content .dots .dot:nth-of-type(1) {
+                top: -190px;
+                right: -190px;
+                width: 380px;
+                height: 380px
+            }
+        }
+
+        .pop-up .content .dots .dot:nth-of-type(2) {
+            bottom: -120px;
+            left: -120px;
+            width: 240px;
+            height: 240px;
+            background-color: #f66867;
+            -webkit-animation: float 8s ease-in-out infinite;
+            -moz-animation: float 8s ease-in-out infinite;
+            -o-animation: float 8s ease-in-out infinite;
+            animation: float 8s ease-in-out infinite
+        }
+
+        .pop-up .content .dots .dot:nth-of-type(3) {
+            bottom: -50px;
+            right: -50px;
+            width: 100px;
+            height: 100px;
+            background-color: #ffd84c;
+            -webkit-animation: float 4s ease-in-out infinite;
+            -moz-animation: float 4s ease-in-out infinite;
+            -o-animation: float 4s ease-in-out infinite;
+            animation: float 4s ease-in-out infinite
+        }
+
+        .pop-up .content .title h1 {
+            text-align: center;
+            color: #f66867;
+            text-transform: uppercase;
+            font-weight: 900;
+            font-size: 2.8rem;
+            letter-spacing: .05rem
+        }
+
+        .pop-up .content img {
+            width: 100%;
+            max-width: 220px;
+            display: inline-block;
+            margin: 30px 0 40px;
+            opacity: 0;
+            -webkit-transform: translateX(60px);
+            -moz-transform: translateX(60px);
+            -ms-transform: translateX(60px);
+            -o-transform: translateX(60px);
+            transform: translateX(60px);
+            -webkit-transition: .2s;
+            -moz-transition: .2s;
+            -o-transition: .2s;
+            transition: .2s;
+            -webkit-backface-visibility: hidden
+        }
+
+        .pop-up .content .subscribe h1 {
+            font-size: 1.5rem;
+            color: #3e4146;
+            line-height: 130%;
+            letter-spacing: .07rem;
+            margin-bottom: 30px
+        }
+
+        .pop-up .content .subscribe h1 span {
+            color: #3dca48
+        }
+
+        .pop-up .content .subscribe form {
+            overflow: hidden
+        }
+
+        .pop-up .content .subscribe form input {
+            width: 100%;
+            float: left;
+            padding: 15px 20px;
+            text-align: center;
+            font-family: inherit;
+            font-size: 1.1rem;
+            letter-spacing: .05rem;
+            outline: 0
+        }
+
+        .pop-up .content .subscribe form input[type=email] {
+            margin-bottom: 15px;
+            border: 1px solid #bec1c5;
+            -webkit-transition: all .4s;
+            -moz-transition: all .4s;
+            -o-transition: all .4s;
+            transition: all .4s
+        }
+
+        @media (min-width:768px) {
+            .pop-up .content img {
+                max-width: 300px
+            }
+
+            .pop-up .content .subscribe form input[type=email] {
+                margin-bottom: 0;
+                width: 75%;
+                border-right-width: 0
+            }
+
+            .pop-up .content .subscribe form input[type=submit] {
+                width: 25%
+            }
+        }
+
+        .pop-up .content .subscribe form input[type=email]:focus {
+            border-color: #3e4146
+        }
+
+        .pop-up .content .subscribe form input[type=submit] {
+            background-color: #8e6ac1;
+            color: #fff;
+            border: 1px solid #8e6ac1;
+            -webkit-transition: all .4s;
+            -moz-transition: all .4s;
+            -o-transition: all .4s;
+            transition: all .4s
+        }
+
+        .pop-up .content .subscribe form input[type=submit]:hover {
+            cursor: pointer;
+            background-color: #7349af;
+            border-color: #7349af
+        }
+
+        .pop-up.open {
+            visibility: visible;
+            opacity: 1;
+            -webkit-transform: translate(-50%, -50%) scale(1);
+            -moz-transform: translate(-50%, -50%) scale(1);
+            -ms-transform: translate(-50%, -50%) scale(1);
+            -o-transform: translate(-50%, -50%) scale(1);
+            transform: translate(-50%, -50%) scale(1)
+        }
+
+        .pop-up.open img {
+            opacity: 1;
+            -webkit-transition: 1s;
+            -moz-transition: 1s;
+            -o-transition: 1s;
+            transition: 1s;
+            -webkit-transition-delay: .3s;
+            -moz-transition-delay: .3s;
+            -o-transition-delay: .3s;
+            transition-delay: .3s;
+            -webkit-transform: translateX(0);
+            -moz-transform: translateX(0);
+            -ms-transform: translateX(0);
+            -o-transform: translateX(0);
+            transform: translateX(0)
+        }
+    </style>
+    <div class="pop-up" style="">
+        <div class="content">
+            <div class="container">
+                <div class="dots">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div>
+
+                <span class="close" style="font-size:30px">close</span>
+
+                <div class="title" style="color:green">
+                    <h1 style="color:green">Book Your trip now</h1>
+                </div>
+
+                <img src="/assets/img/WhatsApp.svg" alt="Whatsapp">
+
+                <div class="subscribe">
+                    <h1>Call us on Whatsapp <span> +62 853-3740-8370</span>.</h1>
+                </div>
             </div>
-          </div>
-         </div>
-         
-         <div class="col-md-6">
-          <div class="right">
-            <div id="sub-icon" class="social-icons-subnav">
-                 <a href="#"><span class="ti-facebook"></span></a>
-                <a href="#"><span class="ti-dribbble"></span></a>
-                <a href="#"><span class="ti-twitter"></span></a>
-                <a href="#"><span class="ti-instagram"></span></a>
-                <a href="#"><span class="ti-linkedin"></span></a> 
-            </div>
-          </div>
-         </div>
-        
         </div>
     </div>
-    </div> -->
-    <!-- subnav end -->
-    
-      <!-- nav -->
-      <div class="navbar-default-white navbar-fixed-top">
-        <div class="container-fluid m-5-hor">
-        <div class="row">
-        
-           <!-- menu mobile display -->
-          
-          <!-- logo --> 
-          <a class="navbar-brand white" href="index.html">
-          <img class="white" alt="logo" src="assets/img/Angel billabong.jpg">
-          <img class="black" alt="logo" src="assets/img/Angel billabong.jpg">
-          </a> 
-          <!-- logo end -->
-          
-          <!-- mainmenu start -->
-          <!-- mainmenu end -->
-          
-        </div>
-        </div>
-        <!-- container -->
-      </div>
-      <!-- nav end -->
-      </header>
-      
-      <!-- home -->
-      <div id="home">
-      <!-- revolution slider -->
-      <section class="no-top no-bottom" aria-label="section-slider">
-      <div class="fullwidthbanner-container">
-      <div id="revolution-slider-half">
-                    <ul>
+    <!-- content wraper -->
+    <div class="content-wrapper">
 
-                        <li data-transition="parallaxtobottom" data-slotamount="10" data-masterspeed="1200" data-delay="5000">
-                            <!--  BACKGROUND IMAGE -->
-                            <img src="/assets/img/Putu family.jpg" alt="" data-start="0" data-bgposition="center center" data-kenburns="on" data-duration="10000" data-ease="Linear.easeNone" data-bgfit="120" data-bgfitend="100" data-bgpositionend="center center"/>
-                            <div class="tp-caption slide-big-heading sft"
-                                data-x="center"
-                                data-y="300"
-                                data-speed="800"
-                                data-start="400"
-                                data-easing="easeInOutExpo"
-                                data-endspeed="450">
-                                Discover Penida with locals
-                            </div>
 
-                            <div class="tp-caption slide-sub-heading sft"
-                                data-x="center"
-                                data-y="370"
-                                data-speed="1000"
-					            data-start="800"
-					            data-easing="easeOutExpo"
-                                data-endspeed="400">
-                                authenticity & love
-                            </div>
 
-                            <div class="tp-caption sfb"
-                                data-x="center"
-                                data-y="410"
-                                data-speed="400"
-                                data-start="800"
-                                data-easing="easeInOutExpo">
-                                <div class="btn-slider"><span class="shine"></span><a href="#" >
-                                    
-                                    Call us on Whatsapp</a></div>
-                            </div>
+        <!-- home -->
+        <div id="home">
+            <!-- revolution slider -->
+            <section class="no-top no-bottom" aria-label="section-slider">
+                <div class="fullwidthbanner-container">
+                    <div id="revolution-slider-half">
+                        <ul>
 
-                        </li>
-                        
-                        <li data-transition="parallaxtobottom" data-slotamount="10" data-masterspeed="1200" data-delay="5000">
-                            <!--  BACKGROUND IMAGE -->
-                            <img src="assets/img/Beautiful sunrise with a rinjani mount (lombok island) view. Taken from my village.jpg" alt="" data-start="0" data-bgposition="center center" data-kenburns="on" data-duration="10000" data-ease="Linear.easeNone" data-bgfit="120" data-bgfitend="100" data-bgpositionend="center center" />
-                            <div class="tp-caption slide-big-heading sft"
-                                data-x="center"
-                                data-y="300"
-                                data-speed="800"
-                                data-start="400"
-                                data-easing="easeInOutExpo"
-                                data-endspeed="450">
-                                Sunsets from the village
-                            </div>
+                            <li data-transition="parallaxtobottom" data-slotamount="10" data-masterspeed="1200"
+                                data-delay="5000">
+                                <!--  BACKGROUND IMAGE -->
+                                <img src="/assets/img/family_home.jpg" alt="" data-start="0" data-bgposition="center center"
+                                    data-kenburns="on" data-duration="10000" data-ease="Linear.easeNone" data-bgfit="120"
+                                    data-bgfitend="100" data-bgpositionend="center center" />
+                                <div class="tp-caption slide-big-heading sft" data-x="center" data-y="300" data-speed="800"
+                                    data-start="400" data-easing="easeInOutExpo" data-endspeed="450">
+                                    Discover Penida with locals
+                                </div>
 
-                            <div class="tp-caption slide-sub-heading sft"
-                                data-x="center"
-                                data-y="370"
-                                data-speed="1000"
-					            data-start="800"
-					            data-easing="easeOutExpo"
-                                data-endspeed="400">
-                                authenticity & love
-                            </div>
+                                <div class="tp-caption slide-sub-heading sft" data-x="center" data-y="370" data-speed="1000"
+                                    data-start="800" data-easing="easeOutExpo" data-endspeed="400">
+                                    authenticity & love
+                                </div>
 
-                            <div class="tp-caption sfb"
-                                data-x="center"
-                                data-y="410"
-                                data-speed="400"
-                                data-start="800"
-                                data-easing="easeInOutExpo">
-                                <div class="btn-slider"><span class="shine"></span><a href="#" >
-                                    Call us on Whatsapp</a></div>
-                            </div>
+                                <div class="tp-caption sfb" data-x="center" data-y="410" data-speed="400" data-start="800"
+                                    data-easing="easeInOutExpo">
 
-                        </li>
-                        
-                        <li data-transition="parallaxtobottom" data-slotamount="10" data-masterspeed="1200" data-delay="5000">
-                            <!--  BACKGROUND IMAGE -->
-                            <img src="assets/img/Putu.jpg" alt="" data-start="0" data-bgposition="center center" data-kenburns="on" data-duration="10000" data-ease="Linear.easeNone" data-bgfit="120" data-bgfitend="100" data-bgpositionend="center center" />
-                            <div class="tp-caption slide-big-heading sft"
-                                data-x="center"
-                                data-y="300"
-                                data-speed="800"
-                                data-start="400"
-                                data-easing="easeInOutExpo"
-                                data-endspeed="450">
-                                My name is Putu, and I will be your guide
-                            </div>
+                                    <div class="button" style="opacity:0.9;border:#3dca48;padding-top:50px">
+                                        <button><span>Call us</span></button>
+                                    </div>
+                                </div>
 
-                            <div class="tp-caption slide-sub-heading sft"
-                                data-x="center"
-                                data-y="370"
-                                data-speed="1000"
-					            data-start="800"
-					            data-easing="easeOutExpo"
-                                data-endspeed="400">
-                                Discover nusa penida with me and my family
-                            </div>
+                            </li>
 
-                            <div class="tp-caption sfb"
-                                data-x="center"
-                                data-y="410"
-                                data-speed="400"
-                                data-start="800"
-                                data-easing="easeInOutExpo">
-                                <div class="btn-slider"><span class="shine"></span><a href="#" >
-                                    Call me on Whatsapp</a></div>
-                            </div>
+                            <li data-transition="parallaxtobottom" data-slotamount="10" data-masterspeed="1200"
+                                data-delay="5000">
+                                <!--  BACKGROUND IMAGE -->
+                                <img class="" src="assets/img/Sunrise taken from the village where we're living.jpg"
+                                    alt="" data-start="0" data-bgposition="center center" data-kenburns="on"
+                                    data-duration="10000" data-ease="Linear.easeNone" data-bgfit="120" data-bgfitend="100"
+                                    data-bgpositionend="center center" />
+                                <div class="tp-caption slide-big-heading sft" data-x="center" data-y="300" data-speed="800"
+                                    data-start="400" data-easing="easeInOutExpo" data-endspeed="450">
+                                    Sunsets from the village
+                                </div>
 
-                        </li>
-                       
-                    </ul>
-                    <div class="tp-bannertimer hide"></div>
-                </div>
-              </div>
-        </section>
-        <!-- revolution slider end -->
-         
-  </div>
-  <!-- home end -->
+                                <div class="tp-caption slide-sub-heading sft" data-x="center" data-y="370" data-speed="1000"
+                                    data-start="800" data-easing="easeOutExpo" data-endspeed="400">
+                                    authenticity & love
+                                </div>
 
-      <!--  top rated --> 
-      <section aria-label="top-rated">
-             <div class="container-fluid m-5-hor">
-                <div class="row">
-                  <div class="col-md-6 sp-padding ">
-                    <img alt="top-rated" class="img-responsive" src="img/img-top-rated.jpg">
-                  </div>
-                  <div class="col-md-6 p-30">
-                    <h3 class="big-heading">Top Rated Our Tours</h3>
-                    <span class="sub-heading-content">No mei consectetuer</span>
-                    <span class="devider-left"></span>
-                    <p>Qui ut ceteros comprehensam. Cu eos sale  sanctus eligendi, id ius elitr saperet,ocurreret  pertinacia pri an. No mei nibh consectetuer</p>
-                    <div id="tag-country">
-                      <a href="#" class="list-country">
-                        Europe <sup>(40)tours</sup>
-                      </a>
-                      <a href="#" class="list-country">
-                        Australia <sup>(40)tours</sup>
-                      </a>
-                      <a href="#" class="list-country">
-                        America <sup>(40)tours</sup>
-                      </a>
-                      <a href="#" class="list-country">
-                        Asia <sup>(40)tours</sup>
-                      </a>
-                      <a href="#" class="list-country">
-                        Africa <sup>(40)tours</sup>
-                      </a>
-                      <a href="#" class="list-country">
-                        Japan <sup>(40)tours</sup>
-                      </a>
-                      <a href="#" class="list-country">
-                        Rusian <sup>(40)tours</sup>
-                      </a>
+                                <div class="tp-caption sfb" data-x="center" data-y="410" data-speed="400" data-start="800"
+                                    data-easing="easeInOutExpo">
+                                    <div class="button" style="opacity:0.9;border:#3dca48;padding-top:50px">
+                                        <button><span>Call us</span></button>
+                                    </div>
+                                </div>
+
+                            </li>
+
+                            <li data-transition="parallaxtobottom" data-slotamount="10" data-masterspeed="1200"
+                                data-delay="5000">
+                                <!--  BACKGROUND IMAGE -->
+                                <img src="assets/img/Putu2.jpg" alt="" data-start="0" data-bgposition="center center"
+                                    data-kenburns="on" data-duration="10000" data-ease="Linear.easeNone" data-bgfit="120"
+                                    data-bgfitend="100" data-bgpositionend="center center" />
+                                <div class="tp-caption slide-big-heading sft" data-x="center" data-y="300" data-speed="800"
+                                    data-start="400" data-easing="easeInOutExpo" data-endspeed="450">
+                                    My name is Putu, and I will be your guide
+                                </div>
+
+                                <div class="tp-caption slide-sub-heading sft" data-x="center" data-y="370" data-speed="1000"
+                                    data-start="800" data-easing="easeOutExpo" data-endspeed="400">
+                                    Discover nusa penida with me and my family
+                                </div>
+
+                                <div class="tp-caption sfb" data-x="center" data-y="410" data-speed="400" data-start="800"
+                                    data-easing="easeInOutExpo">
+
+                                    <div class="button" style="opacity:0.9;border:#3dca48;padding-top:50px">
+                                        <button><span>Call us</span></button>
+                                    </div>
+                                </div>
+
+                            </li>
+
+                        </ul>
+                        <div class="tp-bannertimer hide"></div>
                     </div>
-                    <a href="#" class="btn-content">
-                        ALL DESTINATION
-                      </a>
-                  </div>
                 </div>
-             </div>
-      </section>  
-      <!--  top rated end --> 
+            </section>
+            <!-- revolution slider end -->
 
-      <!-- section features -->
-      <section class="whitepage no-bottom no-top no-padding">
-        <div class="container-fluid">
-          <div class="row">
-          
-            <div class="no-gutter">
-
-                <div class="col-md-4">
-                 <div class="features no-margin">
-                 <div class="bg-img">
-                 <h3 class="big-heading">ASIA <sup class="subtour">7 Tours</sup></h3>
-                 <p class="content">Qui ut ceteros comprehensam. Cu eos sale 
-            sanctus eligendi, id ius elitr saperet,ocurreret 
-            pertinacia pri an. No mei nibh consectetuer</p>
-                 <a href="#"><span class="shine"></span>View More</a>
-                 </div>
-                 </div>
-                </div>
-                
-                <div class="col-md-4">
-                 <div class="features no-margin">
-                 <div class="bg-img-1">
-                 <h3 class="big-heading">EUROPE <sup class="subtour">9 Tours</sup></h3>
-                 <p class="content">Qui ut ceteros comprehensam. Cu eos sale 
-            sanctus eligendi, id ius elitr saperet,ocurreret 
-            pertinacia pri an. No mei nibh consectetuer</p>
-                 <a href="#"><span class="shine"></span>View More</a>
-                 </div>
-                 </div>
-                </div>
-                
-                <div class="col-md-4">
-                 <div class="features no-margin">
-                 <div class="bg-img-2">
-                 <h3 class="big-heading">AFRICA <sup class="subtour">12 Tours</sup></h3>
-                 <p class="content">Qui ut ceteros comprehensam. Cu eos sale 
-            sanctus eligendi, id ius elitr saperet,ocurreret 
-            pertinacia pri an. No mei nibh consectetuer</p>
-                 <a href="#"><span class="shine"></span>View More</a>
-                 </div>
-                 </div>
-                </div>
-
-            </div>
-          
-           </div>
-          </div>
-      </section>
-      <!-- section features end -->
-
-      <!-- testimony --> 
-      <section id="testimony" class="color-page no-padding">
-         <div class="container-fluid">
-            <div class="row">
-            
-             <div class="image-container autoheight col-lg-6 pull-right hidden-md hidden-sm hidden-xs onStep" data-animation="fadeInRight" data-time="300"></div> 
-            
-              <div class="col-lg-6 col-md-12 autoheight">
-                
-                <div class="p-90">
-                <div id="owl-testimonial" class="owl-carousel owl-theme">
-                
-                            <div class="item">
-                                <blockquote>
-                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                                  <small>Someone famous in <cite title="Source Title" class="color">Source Title</cite></small>
-                                </blockquote>
-                                <img alt="imagetesti" class="tal" src="img/img-testi-1.png">
-                                <h3>Emma Watson</h3>
-                            </div>
-                            
-                            <div class="item">
-                                <blockquote>
-                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                                  <small>Someone famous in <cite title="Source Title" class="color">Source Title</cite></small>
-                                </blockquote>
-                                <img alt="imagetesti" class="tal" src="img/img-testi-1.png">
-                                <h3>Emma Watson</h3>
-                            </div>  
-                             
-                            <div class="item">
-                                <blockquote>
-                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                                  <small>Someone famous in <cite title="Source Title" class="color">Source Title</cite></small>
-                                </blockquote>
-                                <img alt="imagetesti" class="tal" src="img/img-testi-1.png">
-                                <h3>Emma Watson</h3>
-                            </div>                        
-                </div>
-                </div>
-               </div>
-               
-               
-               
-            </div>
-            </div>
-       </section>
-       <!-- testimony end -->
-
-      <!--  gallery home --> 
-      <section aria-label="gallery">
-        <div class="container-fluid m-5-hor">
-          <div class="row">
-
-           </div>
-          </div>
-
-         <div class="onStep" data-animation="fadeInUp" data-time="0">
-         <div id="owl-gal" class="owl-carousel">
-                    
-                     <div class="item">
-                      <div class="gal-home">
-                        <a href="projects-detail.html">
-                        <div class="hovereffect">
-                          <img alt="imageportofolio" class="img-responsive" src="img/gallery-home/img1.jpg">
-                        </div>
-                        <div class="gal-home-content">
-                          <div class="row">
-                               <div class="col-md-9"> 
-                                <h4>Blue Ocean Island</h4>
-                                <p>Duration 5 days</p>
-                                <div class="star-content">
-                                  <i class="fa fa-star" aria-hidden="true"></i> 
-                                  <i class="fa fa-star" aria-hidden="true"></i> 
-                                  <i class="fa fa-star" aria-hidden="true"></i> 
-                                  <i class="fa fa-star" aria-hidden="true"></i> 
-                                  <i class="fa fa-star-o" aria-hidden="true"></i>
-                                 </div>
-                                 <div class="review-cont big-heading">1 Reviews</div>
-                               </div>
-                               <div class="col-md-3"> 
-                                <div class="heading-price">From</div>
-                                <div class="price big-heading">$ 1200</div>
-                               </div>
-                         </div>
-                        </div>
-                        </a>
-                      </div>
-                      </div>
-
-                      <div class="item">
-                      <div class="gal-home">
-                        <a href="projects-detail.html">
-                        <div class="hovereffect">
-                          <img alt="imageportofolio" class="img-responsive" src="img/gallery-home/img2.jpg">
-                        </div>
-                        <div class="gal-home-content">
-                          <div class="row">
-                               <div class="col-md-9"> 
-                                <h4>Luxury Asia Travel</h4>
-                                <p>Duration 5 days</p>
-                                <div class="star-content">
-                                  <i class="fa fa-star" aria-hidden="true"></i> 
-                                  <i class="fa fa-star" aria-hidden="true"></i> 
-                                  <i class="fa fa-star" aria-hidden="true"></i> 
-                                  <i class="fa fa-star" aria-hidden="true"></i> 
-                                  <i class="fa fa-star-o" aria-hidden="true"></i>
-                                 </div>
-                                 <div class="review-cont big-heading">1 Reviews</div>
-                               </div>
-                               <div class="col-md-3"> 
-                                <div class="heading-price">From</div>
-                                <div class="price big-heading">$ 1200</div>
-                               </div>
-                         </div>
-                        </div>
-                        </a>
-                      </div>
-                      </div>
-
-                      <div class="item">
-                      <div class="gal-home">
-                        <a href="projects-detail.html">
-                        <div class="hovereffect">
-                          <img alt="imageportofolio" class="img-responsive" src="img/gallery-home/img3.jpg">
-                        </div>
-                        <div class="gal-home-content">
-                          <div class="row">
-                               <div class="col-md-9"> 
-                                <h4>Wild Tour Africa</h4>
-                                <p>Duration 5 days</p>
-                                <div class="star-content">
-                                  <i class="fa fa-star" aria-hidden="true"></i> 
-                                  <i class="fa fa-star" aria-hidden="true"></i> 
-                                  <i class="fa fa-star" aria-hidden="true"></i> 
-                                  <i class="fa fa-star" aria-hidden="true"></i> 
-                                  <i class="fa fa-star-o" aria-hidden="true"></i>
-                                 </div>
-                                 <div class="review-cont big-heading">1 Reviews</div>
-                               </div>
-                               <div class="col-md-3"> 
-                                <div class="heading-price">From</div>
-                                <div class="price big-heading">$ 1200</div>
-                               </div>
-                         </div>
-                        </div>
-                        </a>
-                      </div>
-                      </div>
-
-                      <div class="item">
-                      <div class="gal-home">
-                        <a href="projects-detail.html">
-                        <div class="hovereffect">
-                          <img alt="imageportofolio" class="img-responsive" src="img/gallery-home/img4.jpg">
-                        </div>
-                        <div class="gal-home-content">
-                          <div class="row">
-                               <div class="col-md-9"> 
-                                <h4>Amazing Diversity Place</h4>
-                                <p>Duration 5 days</p>
-                                <div class="star-content">
-                                  <i class="fa fa-star" aria-hidden="true"></i> 
-                                  <i class="fa fa-star" aria-hidden="true"></i> 
-                                  <i class="fa fa-star" aria-hidden="true"></i> 
-                                  <i class="fa fa-star" aria-hidden="true"></i> 
-                                  <i class="fa fa-star-o" aria-hidden="true"></i>
-                                 </div>
-                                 <div class="review-cont big-heading">1 Reviews</div>
-                               </div>
-                               <div class="col-md-3"> 
-                                <div class="heading-price">From</div>
-                                <div class="price big-heading">$ 1200</div>
-                               </div>
-                         </div>
-                        </div>
-                        </a>
-                      </div>
-                      </div>
-
-                      <div class="item">
-                      <div class="gal-home">
-                        <a href="projects-detail.html">
-                        <div class="hovereffect">
-                          <img alt="imageportofolio" class="img-responsive" src="img/gallery-home/img5.jpg">
-                        </div>
-                        <div class="gal-home-content">
-                          <div class="row">
-                               <div class="col-md-9"> 
-                                <h4>The Kingdom of West</h4>
-                                <p>Duration 5 days</p>
-                                <div class="star-content">
-                                  <i class="fa fa-star" aria-hidden="true"></i> 
-                                  <i class="fa fa-star" aria-hidden="true"></i> 
-                                  <i class="fa fa-star" aria-hidden="true"></i> 
-                                  <i class="fa fa-star" aria-hidden="true"></i> 
-                                  <i class="fa fa-star-o" aria-hidden="true"></i>
-                                 </div>
-                                 <div class="review-cont big-heading">1 Reviews</div>
-                               </div>
-                               <div class="col-md-3"> 
-                                <div class="heading-price">From</div>
-                                <div class="price big-heading">$ 1200</div>
-                               </div>
-                         </div>
-                        </div>
-                        </a>
-                      </div>
-                      </div>
-
-                      <div class="item">
-                      <div class="gal-home">
-                        <a href="projects-detail.html">
-                        <div class="hovereffect">
-                          <img alt="imageportofolio" class="img-responsive" src="img/gallery-home/img6.jpg">
-                        </div>
-                        <div class="gal-home-content">
-                          <div class="row">
-                               <div class="col-md-9"> 
-                                <h4>An Asian Temple</h4>
-                                <p>Duration 5 days</p>
-                                <div class="star-content">
-                                  <i class="fa fa-star" aria-hidden="true"></i> 
-                                  <i class="fa fa-star" aria-hidden="true"></i> 
-                                  <i class="fa fa-star" aria-hidden="true"></i> 
-                                  <i class="fa fa-star" aria-hidden="true"></i> 
-                                  <i class="fa fa-star-o" aria-hidden="true"></i>
-                                 </div>
-                                 <div class="review-cont big-heading">1 Reviews</div>
-                               </div>
-                               <div class="col-md-3"> 
-                                <div class="heading-price">From</div>
-                                <div class="price big-heading">$ 1200</div>
-                               </div>
-                         </div>
-                        </div>
-                        </a>
-                      </div>
-                      </div>  
-                      
-         </div>
-         </div>
-      </section> 
-      <!--  gallery home end --> 
-
-      <!-- footer -->
-      <footer class="main text-center">
-        <div class="container-fluid m-5-hor">
-          <div class="row">
-          
-          <div class="onStep" data-animation="fadeInUp" data-time="300">
-          <div class="col-md-4 text-left">
-          <span><a href="#">Email: companyname@gmail.com</a></span>=
-          </div>
-          
-          <div class="col-md-4">
-                <span class="logo">
-                <img alt="logo" src="assets/img/Angel billabong.jpg">
-                </span>
-            </div>
-            
-            <div class="col-md-4 text-right">
-              <span>Nusa Penida, Bali, Indonesia</span>
-              <span>Phone: (+62) 853-3740-8370</span>
-            </div>
-            </div>
-
-            
-          </div>
         </div>
-      </footer>
-      <!-- footer end -->
-      
-              <!-- modal login end -->  
+        <!-- home end -->
 
-     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <section id="about-us-1" class="whitepage no-padding">
+            <div class="container-fluid">
+
+                <a href="west-tour.html">
+                    <div class="row">
+
+                        <div class="image-container autoheight-1 col-lg-6 hidden-md hidden-sm hidden-xs pull-left onStep"
+                            data-animation="fadeInLeft" data-time="0">
+                            <img class="img-responsive" src="assets/img/BrokenBeach.jpeg" alt="">
+                        </div>
+
+                        <div class="col-lg-6 autoheight-1">
+                            <div class="p-90">
+                                <h2 class="big-heading space-title">
+                                    WEST TRIP
+                                    <span class="devider-cont"></span>
+                                </h2>
+
+                                <p class="intro">
+                                    Broken Beach,
+                                    Angel's Billabong,
+                                    Kelingking Beach,
+                                    Paluang Cliff,
+                                    Crystal Beach
+                                </p>
+                                Tour costs:
+                                Rp 600,000
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </a>
+            </div>
+        </section>
+
+
+        <section id="about-us-2" class="no-padding whitepage">
+            <div class="container-fluid">
+                <a href="east-tour.html">
+                    <div class="row">
+
+                        <div class="image-container autoheight-2 col-lg-6 hidden-md hidden-sm hidden-xs pull-right onStep"
+                            data-animation="fadeInRight" data-time="0">
+                            <img src="assets/img/Temple1.jpeg" alt="">
+                        </div>
+
+                        <div class="col-lg-6 autoheight-2">
+                            <div class="p-90">
+                                <h2 class="big-heading space-title">
+                                    EAST TRIP
+                                    <span class="devider-cont"></span>
+                                </h2>
+
+                                <p class="intro">
+                                    Atuh Beach, Atuh Cliff, Seribu Island, Teletubbies Hill, Giri Putri cave temple
+                                </p>
+
+                                Tour costs:
+                                Rp 600,000
+
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+
+                    </div>
+                </a>
+                <div class="row">
+
+                    <div class="image-container autoheight-2 col-lg-6 hidden-md hidden-sm hidden-xs pull-right onStep"
+                        data-animation="fadeInRight" data-time="0">
+                        <img src="assets/img/Temple1.jpeg" alt="">
+                    </div>
+
+                    <div class="col-lg-6 autoheight-2">
+                        <div class="p-90">
+                            <h2 class="big-heading space-title">
+                                EAST TRIP
+                                <span class="devider-cont"></span>
+                            </h2>
+
+                            <p class="intro">
+                                Atuh Beach, Atuh Cliff, Seribu Island, Teletubbies Hill, Giri Putri cave temple
+                            </p>
+
+                            Tour costs:
+                            Rp 600,000
+
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="about-us-3" class="whitepage no-padding">
+            <div class="container-fluid">
+                <a href="day-tour.html">
+
+                    <div class="row">
+
+                        <div class="image-container autoheight-1 col-lg-6 hidden-md hidden-sm hidden-xs pull-left onStep"
+                            data-animation="fadeInLeft" data-time="0">
+                            <img src="assets/img/View from Village.jpeg" alt="">
+                        </div>
+
+                        <div class="col-lg-6 autoheight-1">
+                            <div class="p-90">
+                                <h2 class="big-heading space-title">
+                                    FULL DAY TOUR
+                                    <span class="devider-cont"></span>
+                                </h2>
+
+                                <p class="intro">
+                                    <b>(stay at Nusa Penida)</b><br>
+                                    <li>Destinations :Atuh Beach, Seribu Island, Kelingking Beach,
+                                        Broken Beach, Angel's Billagong, Crystal Beach (sunset)
+                                        Kelingking Beach
+                                        Paluang Cliff
+                                        Crystal Beach</li>
+                                </p>
+                                Rental costs:
+                                Rp 800,000
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <section id="about-us-2" class="no-padding whitepage">
+            <div class="container-fluid">
+                <a href="special-2-day-tour.html">
+                    <div class="row">
+
+                        <div class="image-container autoheight-2 col-lg-6 hidden-md hidden-sm hidden-xs pull-right onStep"
+                            data-animation="fadeInRight" data-time="0">
+                            <img src="assets/img/Coconuts.jpeg" alt="">
+                        </div>
+
+                        <div class="col-lg-6 autoheight-2">
+                            <div class="p-90">
+                                <h2 class="big-heading space-title">
+                                    SPECIAL 2 DAYS TOUR
+                                    <span class="devider-cont"></span>
+                                </h2>
+
+                                <p class="intro">
+                                    Destinations :
+                                    <li><b>The first day :</b> Atuh Beach, Pulau Seribu / Raja Lima,
+                                        Volcom Beach / Suwehan Beach, Giri putri cave temple,</li>
+
+                                    <li><b>The second day :</b> Banah cliff, Paluang Cliff, Kelingking Beach,
+                                        Broken Beach, Angels Billagong</li>
+
+                                </p>
+
+                                Tour costs:<br>
+                                Rp 1,300,000<br>
+                                <br>
+                                <li>
+                                    Car capacity max 6 pax.
+                                </li>
+                                <li>
+                                    Can be helped for the fast boat ticket booking to Nusa Penida.
+                                </li>
+                                <li>Local domestic Rp. 200k/pax (return)</li>
+                                <li>Foreigner Rp.250k/pax (return)</li>
+
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+
+                    </div>
+
+                </a>
+            </div>
+        </section>
+
+        <section aria-label="gallery">
+            <div class="container-fluid m-5-hor">
+                <div class="row">
+
+
+
+                </div>
+            </div>
+
+            <div class="onStep" data-animation="fadeInUp" data-time="0">
+                <div id="owl-gal" class="owl-carousel">
+
+                    <div class="item" style="background-color:white">
+                        <div class="gal-home">
+                            <a href="west-tour.html">
+                                <div class="hovereffect">
+                                    <img alt="imageportofolio" class="img-responsive" src="assets/img/BrokenBeach.jpeg">
+                                </div>
+                                <div class="gal-home-content">
+                                    <div class="row">
+                                        <div class="col-md-9">
+                                            <h4>West Trip</h4>
+                                            <p>Broken Beach, Angel's Billabong, Kelingking Beach, Paluang Cliff,
+                                                Crystal Beach</p>
+                                            <div class="star-content">
+                                                <i class="fa fa-star" aria-hidden="true"></i>
+                                                <i class="fa fa-star" aria-hidden="true"></i>
+                                                <i class="fa fa-star" aria-hidden="true"></i>
+                                                <i class="fa fa-star" aria-hidden="true"></i>
+                                                <i class="fa fa-star-o" aria-hidden="true"></i>
+                                            </div>
+                                            <!-- <div class="review-cont big-heading">1 Reviews</div> -->
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="heading-price">Tour costs</div>
+                                            <div class="price ">Rp 600k</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="item" style="background-color:white">
+                        <div class="gal-home">
+                            <a href="east-tour.html">
+                                <div class="hovereffect">
+                                    <img alt="imageportofolio" class="img-responsive" src="assets/img/Temple1.jpeg">
+                                </div>
+                                <div class="gal-home-content">
+                                    <div class="row">
+                                        <div class="col-md-9">
+                                            <h4>East Trip</h4>
+                                            <p>Atuh Beach, Atuh, Cliff, Seribu Island, Teletubbies Hill, Giri putri
+                                                cave temple</p>
+                                            <div class="star-content">
+                                                <i class="fa fa-star" aria-hidden="true"></i>
+                                                <i class="fa fa-star" aria-hidden="true"></i>
+                                                <i class="fa fa-star" aria-hidden="true"></i>
+                                                <i class="fa fa-star" aria-hidden="true"></i>
+                                                <i class="fa fa-star-o" aria-hidden="true"></i>
+                                            </div>
+                                            <!-- <div class="review-cont big-heading">1 Reviews</div> -->
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="heading-price">Tour costs</div>
+                                            <div class="price big-heading">Rp 600k</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="item" style="background-color:white">
+                        <div class="gal-home">
+                            <a href="day-tour.html">
+                                <div class="hovereffect">
+                                    <img alt="imageportofolio" class="img-responsive" src="assets/img/View from Village.jpeg">
+                                </div>
+                                <div class="gal-home-content">
+                                    <div class="row">
+                                        <div class="col-md-9">
+                                            <h4>FULL DAY TOUR</h4>
+                                            <p>Atuh Beach, Seribu Island, Kelingking Beach, Broken Beach, Angel's
+                                                Billagong, Crystal Beach (Sunset)</p>
+                                            <div class="star-content">
+                                                <i class="fa fa-star" aria-hidden="true"></i>
+                                                <i class="fa fa-star" aria-hidden="true"></i>
+                                                <i class="fa fa-star" aria-hidden="true"></i>
+                                                <i class="fa fa-star" aria-hidden="true"></i>
+                                                <i class="fa fa-star-o" aria-hidden="true"></i>
+                                            </div>
+                                            <!-- <div class="review-cont big-heading">1 Reviews</div> -->
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="heading-price">Rental costs</div>
+                                            <div class="price big-heading">Rp 800k</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="item" style="background-color:white">
+                        <div class="gal-home">
+                            <a href="special-2-day-tour.html">
+                                <div class="hovereffect">
+                                    <img alt="imageportofolio" class="img-responsive" src="assets/img/Coconuts.jpeg">
+                                </div>
+                                <div class="gal-home-content">
+                                    <div class="row">
+                                        <div class="col-md-9">
+                                            <h4>SPECIAL 2 DAYS TOUR</h4>
+                                            <p>Atuh Beach, Pulay Beach, Raja Lima, Volcom Beach, Suwehan Beach, Giri
+                                                Putri cave temple, Bana Cliff, Paluang Cliff, Kelingking Beach, Broken
+                                                Beach, Angel Billabong</p>
+                                            <div class="star-content">
+                                                <i class="fa fa-star" aria-hidden="true"></i>
+                                                <i class="fa fa-star" aria-hidden="true"></i>
+                                                <i class="fa fa-star" aria-hidden="true"></i>
+                                                <i class="fa fa-star" aria-hidden="true"></i>
+                                                <i class="fa fa-star-o" aria-hidden="true"></i>
+                                            </div>
+                                            <!-- <div class="review-cont big-heading">1 Reviews</div> -->
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="heading-price">2 day tour fees (max 6 pax.)</div>
+                                            <div class="price big-heading">Rp 1,300k</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- testimony -->
+        <section id="testimony" class="color-page no-padding">
+            <div class="container-fluid">
+                <div class="row">
+
+                    <div class="image-container autoheight col-lg-6 pull-right hidden-md hidden-sm hidden-xs onStep"
+                        data-animation="fadeInRight" data-time="300">
+
+                        <img src="assets/img/PutuGuest.jpeg" alt="">
+                    </div>
+
+                    <div class="col-lg-6 col-md-12 autoheight">
+
+                        <div class="p-90">
+                            <div id="owl-testimonial" class="owl-carousel owl-theme">
+
+                                <div class="item">
+                                    <blockquote>
+                                        <p>My stay with Putu's family was one of the best travel experience I have had.
+                                            It is a very pure experience to share moments with a local family whose
+                                            life is miles from my own, both geographically but also culturally. My stay
+                                            has been both authentic because of the island and themselves. Thank you! :)</p>
+                                        <small> <cite title="Source Title" class="color">Julien Godenir</cite></small>
+                                    </blockquote>
+                                </div>
+
+                                <div class="item">
+                                    <blockquote>
+                                        <p>My stay in Penida was one of the best of my travel throughout South-East
+                                            Asia. Putu and I are truly friends now. I hope to come back soon!</p>
+                                        <small><cite title="Source Title" class="color">Kristin</cite></small>
+                                    </blockquote>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </section>
+        <!-- testimony end -->
+
+
+        <!-- footer -->
+        <footer class="main text-center">
+            <div class="container-fluid m-5-hor">
+                <div class="row">
+
+                    <div class="onStep" data-animation="fadeInUp" data-time="300">
+                        <div class="col-md-4">
+                            <span><a href="#">Email: companyname@gmail.com</a></span>
+                            <span>Nusa Penida, Bali, Indonesia</span>
+                            <span>Phone: (+62) 853-3740-8370</span>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </footer>
+        <!-- footer end -->
+
+        <!-- modal login end -->
+
+
     </div>
-    <!-- content wraper end --> 
-    
+    <!-- content wraper end -->
+
     <!-- plugin JS -->
     <!-- <script
   src="https://code.jquery.com/jquery-3.3.1.min.js"
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
   crossorigin="anonymous"></script>s -->
-    <script src="assets/js/pluginson3step.js"></script> 
+    <script src="assets/js/pluginson3step.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
     <script src='assets/js/bootstrap-datepicker.min.js'></script>
-    <script src="assets/js/sticky.js"></script> 
+    <script src="assets/js/sticky.js"></script>
     <!-- slider revolution  -->
     <script src="assets/js/jquery.themepunch.tools.min.js"></script>
     <script src="assets/js/jquery.themepunch.revolution.min.js"></script>
     <!-- on3step JS -->
     <script src="assets/js/on3step.js"></script>
     <script src="assets/js/plugin-set.js"></script>
-  </body>
+    <script src="assets/js/popup.js"></script>
+</body>
+
 </html>
